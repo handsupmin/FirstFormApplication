@@ -57,7 +57,7 @@ namespace FirstFormApplication
         private void timer1_Tick(object sender, EventArgs e)
         { // 시간이 1초 단위로 지날 때 마다 실행되는 이벤트
             time++; // 전역변수 time의 값을 1추가
-            button4.Text = time + "초가  지났습니다"; // 버튼의 텍스트 값을 변경
+            textBox1.Text = time + "초가  지났습니다"; // 버튼의 텍스트 값을 변경
         }
     }
 }
