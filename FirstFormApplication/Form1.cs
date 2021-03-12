@@ -57,7 +57,20 @@ namespace FirstFormApplication
         private void timer1_Tick(object sender, EventArgs e)
         { // 시간이 1초 단위로 지날 때 마다 실행되는 이벤트
             time++; // 전역변수 time의 값을 1추가
-            textBox1.Text = time + "초가  지났습니다"; // 버튼의 텍스트 값을 변경
+            
+        }
+
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult result; // 누른 버튼을 받아오기 위한 DialogResult 변수 result
+            result = MessageBox.Show("버튼들을 지울까요?", "확인", MessageBoxButtons.YesNo);
+
+            
+            if (result == DialogResult.No) // 취소 클릭 시
+                e.Cancel = true; // 종료를 취소
+            else // 확인 클릭 시 소요 시간을 보여주며 종료
+                MessageBox.Show(time + "초 경과", "소요 시간", MessageBoxButtons.YesNo);
         }
     }
 }
